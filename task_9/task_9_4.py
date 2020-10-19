@@ -1,7 +1,7 @@
 def changing_order_decorator(func):
     def change_order(*args):
-        func(args)
-        return args[::-1]
+        new_args = args[::-1]
+        return func(new_args)
     return change_order
 
 
