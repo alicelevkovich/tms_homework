@@ -12,7 +12,7 @@ class Point(object):
 class Figure(object):
 
     def side_length(self, point_1, point_2):
-        ab_square = pow((point_1.x - point_2.x), 2) + (pow((point_1.y - point_2.y), 2))
+        ab_square = pow((point_2.x - point_1.x), 2) + (pow((point_2.y - point_1.y), 2))
         ab = math.sqrt(ab_square)
         return ab
 
