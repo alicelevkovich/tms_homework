@@ -1,30 +1,32 @@
 from random import randint
+from typing import Optional, List
 
 
 class Matrix:
 
     # data, n, m = None, None, None
 
-    def __init__(self, n=5, m=5, a=0, b=0):
+    def __init__(self, n=5, m=5, a=0, b=0, data: Optional[List] = None):
         self.n = n
         self.m = m
         self.a = a
         self.b = b
 
-        self.data = [[randint(a, b) for i in range(n)] for j in range(m)]
+        self.data = data if data else [[randint(a, b) for i in range(n)] for j in range(m)]
 
-    @staticmethod
-    def copy_constructor(matrix):
-        new_object = Matrix(n=matrix.n, m=matrix.m, a=matrix.a, b=matrix.b)
-        new_object.data = matrix.data
-        return new_object
+    # Implementation of copy method using staticmethod
+
+    # @staticmethod
+    # def copy_constructor(matrix):
+    #     new_object = Matrix(n=matrix.n, m=matrix.m, a=matrix.a, b=matrix.b)
+    #     new_object.data = matrix.data
+    #     return new_object
+
+    def __copy__(self):
+        return Matrix(n=self.n, m=self.m, a=self.a, b=self.b, data=self.data)
 
     def __str__(self):
-        format_string = ''
-        for element in self.data:
-            new_str = " ".join(str(element)) + "\n"
-            format_string += new_str
-        return format_string
+        return '\n'.join(['\t'.join(map(str, row)) for row in self.data])
 
 
 def max_elem(matr: Matrix):
@@ -51,5 +53,3 @@ def sum_elem(matr: Matrix):
         for num in element:
             sum_ += num
     return sum_
-
-
