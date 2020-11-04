@@ -27,7 +27,7 @@ class Giraffe(Animals):
 
     @height.setter
     def height(self, height):
-        if height in range(0, 100):
+        if 100 > height > 0:
             self._height = height
         else:
             print('Impossible height')
@@ -38,7 +38,7 @@ class Giraffe(Animals):
 
     @weight.setter
     def weight(self, weight):
-        if weight in range(0, 50):
+        if 100 > weight > 0:
             self._weight = weight
         else:
             print('You out of the range of weight')
@@ -91,7 +91,7 @@ class Elephant(Animals):
 
         @height.setter
         def height(self, height):
-            if height in range(0, 100):
+            if 100 > height > 0:
                 self._height = height
             else:
                 print('Impossible height')
@@ -102,7 +102,7 @@ class Elephant(Animals):
 
         @weight.setter
         def weight(self, weight):
-            if weight in range(0, 50):
+            if 50 > weight > 0:
                 self._weight = weight
             else:
                 print('You out of the range of weight')
@@ -155,7 +155,7 @@ class Puma(Animals):
 
     @height.setter
     def height(self, height):
-        if height in range(0, 100):
+        if 100 > height > 0:
             self._height = height
         else:
             print('Impossible height')
@@ -166,7 +166,7 @@ class Puma(Animals):
 
     @weight.setter
     def weight(self, weight):
-        if weight in range(0, 50):
+        if 50 > weight > 0:
             self._weight = weight
         else:
             print('You out of the range of weight')
