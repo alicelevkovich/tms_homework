@@ -10,7 +10,6 @@ GOOGLE_URL = 'https://google.com'
 
 
 class Twitter:
-
     def __init__(self, executable_path: str):
         self.driver = webdriver.Chrome(executable_path=executable_path)
 

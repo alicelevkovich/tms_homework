@@ -3,7 +3,6 @@ import sys
 
 LOG_FILE_NAME = 'person.log'
 
-
 def get_logger():
     logger = logging.getLogger(__name__)
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(funcName)s - %(message)s')
