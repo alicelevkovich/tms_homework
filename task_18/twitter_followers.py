@@ -2,14 +2,18 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from logger import get_logger
 from time import sleep
+import os
 
 logger = get_logger()
 
-DRIVER_PATH = '/Users/alice/PycharmProjects/pythonProject5/chromedriver'
+# DRIVER_PATH = '/Users/alice/PycharmProjects/pythonProject5/chromedriver'
+DRIVER_NAME = 'chromedriver'
+DRIVER_PATH = os.path.abspath(__file__) + DRIVER_NAME
 GOOGLE_URL = 'https://google.com'
 
 
 class Twitter:
+
     def __init__(self, executable_path: str):
         self.driver = webdriver.Chrome(executable_path=executable_path)
 
